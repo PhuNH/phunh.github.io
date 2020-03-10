@@ -16,12 +16,21 @@ comments:
   branch: "master"
 
   # Text to use as the commit message or pull request title. Accepts placeholders.
-  commitMessage: "Add Staticman data"
+  commitMessage: "New comment from {fields.name}"
 
   # (*) REQUIRED
   #
   # Destination path (filename) for the data files. Accepts placeholders.
   filename: "entry{@timestamp}"
+  
+  # Akismet
+  akismet:
+    enabled: true
+    author: "name"
+    authorEmail: "email"
+    authorUrl: "url"
+    content: "message"
+    type: "comment"
 
   # The format of the generated data files. Accepted values are "json", "yaml"
   # or "frontmatter"
@@ -43,7 +52,7 @@ comments:
   moderation: true
 
   # Name of the site. Used in notification emails.
-  name: "phunh.github.io"
+  name: "Foo or Phu?"
 
   # Notification settings. When enabled, users can choose to receive notifications
   # via email when someone adds a reply or a new comment. This requires an account
@@ -75,3 +84,9 @@ comments:
   # the name of the field and values are possible transformation types.
   transforms:
     email: md5
+    
+  # reCAPTCHA
+  reCaptcha:
+    enabled: false
+    siteKey: ""
+    secret: 
