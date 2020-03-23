@@ -222,7 +222,7 @@ Here come the issues, from while upgrading until using:
 ```
 Then when booting up, no grub menu, only a message: "Fatal error: token too large, exceeds YYLMAX"
 
-- _Dolphin_ runs as a daemon and keeps opening Home at system startup ([bugzilla][bz1808716]
+- _Dolphin_ runs as a daemon and keeps opening Home at system startup ([bugzilla][bz1808716])
 
 __Workaround__: Kill the daemon and remove `/etc/xdg/autostart/org.kde.dolphin.desktop` (maybe leave it in `~`).
 
@@ -277,7 +277,7 @@ Do you want to generate a stack trace locally? (It may download a huge amount of
 ('analyze_CCpp' exited with 1)
 ```
 
-_(Updating)_
+_(WIP)_
 
 [fedora-torrent]: https://torrent.fedoraproject.org/
 [bz1808716]: https://bugzilla.redhat.com/show_bug.cgi?id=1808716
