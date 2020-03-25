@@ -31,6 +31,6 @@ fi
 - Open `~/.config/khotkeysrc`, find the UUID of the new shortcut
 - Set Meta key shortcut in kwinrc to `org.kde.kglobalaccel,/component/khotkeys,org.kde.kglobalaccel.Component,invokeShortcut,<UUID>` (the UUID includes the curly brackets)
 
-Maybe I should get the newest KDE software instead of going with what Fedora maintainers give me.
+Maybe I should get the newest KDE software instead of going with what Fedora maintainers give me, so that I'm not so far behind online discussions.
 
 [reddit-post]: https://www.reddit.com/r/archlinux/comments/dkfkvj/kde_517_krunner_or_krunner_desktop/
