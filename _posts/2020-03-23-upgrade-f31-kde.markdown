@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Upgrading to Fedora 31, Scientific version"
+title: "Upgrading to Fedora 31, Scientific edition"
 date: 2020-03-23 18:00:00 +0100
 tags: [fedora, f31, kde, log, troubleshoot]
 ---
@@ -233,18 +233,18 @@ __Workaround__: Kill the daemon and remove `/etc/xdg/autostart/org.kde.dolphin.d
 - _Logoff_: "kscreen.kded: PowerDevil SuspendSession action not available!"
 
 - _krunner_:
-  - Programs opened have a different interface and a different icon in Task Switcher from those of ones opened from Applications Menu
-  - To open krunner with Meta key, `kglobalaccel` can't be used anymore
+  - Programs opened have a different interface and a different icon in Task Switcher from those of ones opened from Application Menu
+  - To toggle krunner with Meta key, `invokeShortcut,run command` can't be used anymore: [workaround]({% post_url 2020-03-25-toggle-krunner-plasma-5.17 %})
 
 - _TorBrowser_ can't start, no log exists (on f30 as well)
 
 - _Vimium_ prevents Firefox from handling Ctrl+<number> and Alt+<number> (on f30 as well, so might be a problem with only Vimium and Firefox)
 
-- _Kate_ cannot restore its previous session at startup
+- _Kate_ cannot restore its previous session at startup (on f30 as well)
 
 __Workaround__: Make a default session (in `~/.local/share/kate/sessions`)
 
-- Bug reporting failed for many bugs, an example:
+- Bug reporting failed for many bugs, an example: (on f30 as well)
 ```
 Preparing environment for backtrace generation
 ..................................................................
