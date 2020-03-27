@@ -238,8 +238,6 @@ __Workaround__: Kill the daemon and remove `/etc/xdg/autostart/org.kde.dolphin.d
 
 - _TorBrowser_ can't start, no log exists (on f30 as well)
 
-- _Vimium_ prevents Firefox from handling Ctrl+<number> and Alt+<number> (on f30 as well, so might be a problem with only Vimium and Firefox)
-
 - _Kate_ cannot restore its previous session at startup (on f30 as well)
 
 __Workaround__: Make a default session (in `~/.local/share/kate/sessions`)
