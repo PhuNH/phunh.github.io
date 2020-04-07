@@ -11,7 +11,7 @@ Fedora Scientific is a Fedora variation which comes with KDE among a bunch of sc
 
 Here come the issues, from while upgrading until using:
 
-- _dnfdaemon-selinux_
+#### dnfdaemon-selinux
 ```
 11:09:18 dnf[781]:   Upgrading        : dnfdaemon-selinux-0.3.19-7.fc31.noarch            656/5138
 11:09:19 python3[2965]: detected unhandled Python exception in '/sbin/semanage'
@@ -19,7 +19,8 @@ Here come the issues, from while upgrading until using:
 11:09:19 python3[2965]: error sending data to ABRT daemon:
 ```
 
-- _selinux-policy-targeted_
+---
+#### selinux-policy-targeted
 ```
 11:09:43 dnf[781]:   Upgrading        : selinux-policy-targeted-3.14.4-49.fc31.noarch     658/5138
 11:10:03 kernel: SELinux:  Permission watch in class filesystem not defined in policy.
@@ -63,7 +64,8 @@ Here come the issues, from while upgrading until using:
 11:10:03 kernel: SELinux:  Converting 450 SID table entries...
 ```
 
-- _flatpak-selinux_
+---
+#### flatpak-selinux
 ```
 11:10:03 dnf[781]:   Upgrading        : flatpak-selinux-1.4.4-2.fc31.noarch               659/5138
 11:10:23 kernel: SELinux:  Permission watch in class filesystem not defined in policy.
@@ -107,7 +109,8 @@ Here come the issues, from while upgrading until using:
 11:10:23 kernel: SELinux:  Converting 467 SID table entries...
 ```
 
-- _mariadb-gssapi-server_
+---
+#### mariadb-gssapi-server
 ```
 11:13:07 dnf[781]:   Upgrading        : mariadb-gssapi-server-3:10.3.22-1.fc31.x86_64    1154/5138
 11:13:07 audit[4532]: ADD_GROUP pid=4532 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:groupadd_t:s0 msg='op=add-group acct="mysql" exe="/usr/sbin/groupadd" hostname=? addr=? terminal=? res=failed'
@@ -117,14 +120,16 @@ Here come the issues, from while upgrading until using:
 11:13:07 kernel: audit: type=1114 audit(1584785587.793:87): pid=4533 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:useradd_t:s0 msg='op=add-user acct="mysql" exe="/usr/sbin/useradd" hostname=? addr=? terminal=? res=failed'
 ```
 
-- _initial-setup_
+---
+#### initial-setup
 ```
 11:16:41 dnf[781]:   Running scriptlet: initial-setup-0.3.76-1.fc31.x86_64               2053/5138
 11:16:41 dnf[781]: Failed to get unit file state for initial-setup-graphical.service: No such file or directory
 11:16:41 dnf[781]: Failed to get unit file state for initial-setup-text.service: No such file or directory
 ```
 
-- _openconnect_
+---
+#### openconnect
 ```
 11:16:44 dnf[781]:   Upgrading        : openconnect-8.05-1.fc31.x86_64                   2067/5138
 11:16:45 audit[7158]: ADD_GROUP pid=7158 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:groupadd_t:s0 msg='op=add-group acct="nm-openconnect" exe="/usr/sbin/groupadd" hostname=? addr=? terminal=? res=failed'
@@ -134,14 +139,16 @@ Here come the issues, from while upgrading until using:
 11:16:45 kernel: audit: type=1114 audit(1584785805.008:89): pid=7159 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:useradd_t:s0 msg='op=add-user acct="nm-openconnect" exe="/usr/sbin/useradd" hostname=? addr=? terminal=? res=failed'
 ```
 
-- _maven_
+---
+#### maven
 ```
 11:19:49 dnf[781]:   Running scriptlet: maven-1:3.5.4-7.fc30.noarch                      2581/5138
 11:19:49 dnf[781]: warning: %postun(maven-1:3.5.4-7.fc30.noarch) scriptlet failed, exit status 1
 11:19:49 dnf[781]: Error in POSTUN scriptlet in rpm package maven
 ```
 
-- _alsa-utils_
+---
+#### alsa-utils
 ```
 11:22:34 dnf[781]:   Cleanup          : alsa-utils-1.2.1-3.fc30.x86_64                   3731/5138
 11:22:34 systemd[1]: Stopping Manage Sound Card State (restore and store)...
@@ -157,7 +164,8 @@ Here come the issues, from while upgrading until using:
 11:22:34 kernel: audit: type=1130 audit(1584786154.494:94): pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=alsa-state comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
 ```
 
-- _bluez_
+---
+#### bluez
 ```
 11:22:38 dnf[781]:   Cleanup          : bluez-5.52-1.fc30.x86_64                         3758/5138
 11:22:38 bluetoothd[780]: Terminating
@@ -181,7 +189,11 @@ Here come the issues, from while upgrading until using:
 11:22:38 kernel: debugfs: File 'force_bredr_smp' in directory 'hci0' already present!
 ```
 
-- _Creating initramfs_ (and this ran twice, why?)
+---
+#### Creating initramfs
+
+(and this ran twice, why?)
+
 ```
 11:25:46 dracut[16085]: dracut-050-26.git20200316.fc31
 11:25:46 dracut[16087]: Executing: /usr/bin/dracut -f /boot/initramfs-5.5.10-200.fc31.x86_64.img 5.5.10-200.fc31.x86_64
@@ -214,7 +226,11 @@ Here come the issues, from while upgrading until using:
 11:26:04 dracut[16087]: *** Creating initramfs image file '/boot/initramfs-5.5.10-200.fc31.x86_64.img' done ***
 ```
 
-- _Creating boot menu and booting up_
+---
+#### ~~Creating boot menu and booting up~~
+
+__Details__: [problem with grubby]({% post_url 2020-04-07-problem-grubby-f31 %})
+
 ```
 11:26:27 dnf[781]:   Running scriptlet: kernel-core-5.5.10-200.fc31.x86_64               5138/5138
 11:26:27 dnf[781]: grubby fatal error: unable to find a suitable template
@@ -222,27 +238,46 @@ Here come the issues, from while upgrading until using:
 ```
 Then when booting up, no grub menu, only a message: "Fatal error: token too large, exceeds YYLMAX"
 
-- _Dolphin_ runs as a daemon and keeps opening Home at system startup ([bugzilla][bz1808716])
+---
+#### ~~Dolphin runs as a daemon and keeps opening Home at system startup~~
+
+[Bugzilla][bz1808716]
 
 __Workaround__: Kill the daemon and remove `/etc/xdg/autostart/org.kde.dolphin.desktop` (maybe leave it in `~`).
 
-- _Nextcloud AppImage_ cannot start at system startup
+---
+#### Nextcloud AppImage cannot start at system startup
 
-- _Plasma session_ does not fully restore at system startup (only Firefox and Thunderbird are restored; for others, sometimes some are, sometimes not)
+---
+#### Plasma session does not fully restore at system startup 
 
-- _Logoff_: "kscreen.kded: PowerDevil SuspendSession action not available!"
+Only Firefox and Thunderbird are restored; for others, sometimes some are, sometimes not.
 
-- _krunner_:
+---
+#### Logoff
+
+`kscreen.kded: PowerDevil SuspendSession action not available!`
+
+---
+#### krunner
   - Programs opened have a different interface and a different icon in Task Switcher from those of ones opened from Application Menu
-  - To toggle krunner with Meta key, `invokeShortcut,run command` can't be used anymore: [workaround]({% post_url 2020-03-25-toggle-krunner-plasma-5.17 %})
+  - ~~To toggle krunner with Meta key, `invokeShortcut,run command` can't be used anymore~~ [workaround]({% post_url 2020-03-25-toggle-krunner-plasma-5.17 %})
 
-- _TorBrowser_ can't start, no log exists (on f30 as well)
+---
+#### TorBrowser can't start, no log exists
 
-- _Kate_ cannot restore its previous session at startup (on f30 as well)
+On f30 as well
+
+---
+#### ~~Kate cannot restore its previous session at startup~~
 
 __Workaround__: Make a default session (in `~/.local/share/kate/sessions`)
 
-- Bug reporting failed for many bugs, an example: (on f30 as well)
+---
+#### Bug reporting failed for many bugs, an example:
+
+On f30 as well
+
 ```
 Preparing environment for backtrace generation
 ..................................................................
@@ -275,6 +310,7 @@ Do you want to generate a stack trace locally? (It may download a huge amount of
 ('analyze_CCpp' exited with 1)
 ```
 
+---
 _(WIP)_
 
 [fedora-torrent]: https://torrent.fedoraproject.org/
