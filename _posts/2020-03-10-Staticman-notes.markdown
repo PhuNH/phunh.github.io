@@ -16,7 +16,7 @@ Staticman is the middle man who pushes comments on a GH site as commits from an 
 - _staticman.sample.yml_: a sample to create _staticman.yml_ which is the site config file and must be put in the site's repo.
 - _staticman\_key.pub_: no idea about this file.
 
-# For v2:
+# For v2
 - Scope of the token: `public_repo` is enough if the site repo is public, otherwise `repo` is needed for accessing a private repo.
   - Travis Downs in [his blog post][trav-downs-token] wrote that `user` is necessary: so far I don't see the reason for that.
   - Ujjwal Verma [noted][ujjwal96-token] to use `admin:repo_hook`: the returned error code would be `GITHUB_CREATING_PR` which means that GitHub could not create a PR with this scope (when `moderation` is on). Or maybe he used a GitHub app instead of a token?
