@@ -26,7 +26,7 @@ else
 fi
 {% endhighlight %}
 - Create a custom global shortcut:
-  - System _Settings_ > _Shortcuts_ > _Custom Shortcuts_ > _Edit_ > _New_ > _Global Shortcut_ > _Command/URL_
+  - _System Settings_ > _Shortcuts_ > _Custom Shortcuts_ > _Edit_ > _New_ > _Global Shortcut_ > _Command/URL_
   - Point to the bash script in the new shortcut's _Action_ tab
 - Open `~/.config/khotkeysrc`, find the UUID of the new shortcut
 - Set Meta key shortcut in kwinrc to `org.kde.kglobalaccel,/component/khotkeys,org.kde.kglobalaccel.Component,invokeShortcut,<UUID>` (the UUID includes the curly brackets)
