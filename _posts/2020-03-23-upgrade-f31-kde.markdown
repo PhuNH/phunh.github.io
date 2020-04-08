@@ -311,6 +311,12 @@ Do you want to generate a stack trace locally? (It may download a huge amount of
 ```
 
 ---
+#### Gnome Keyring
+
+- "gkr-pam unable to locate daemon control file"
+- Keyring is still locked after system unlock, maybe related to the one above
+
+---
 _(WIP)_
 
 [fedora-torrent]: https://torrent.fedoraproject.org/
