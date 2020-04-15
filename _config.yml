@@ -15,9 +15,9 @@
 # in the templates via {{ site.myvariable }}.
 title: Foo or Phu?
 author: Phu Hung Nguyen
-email: phuhnguyen@disroot.org
+email: admin@phunh.ml
 description: >- # this means to ignore newlines until "baseurl:"
-    Useful things I do
+    Built with Jekyll, Staticman, GoatCounter
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://phunh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: phuhnguyen
