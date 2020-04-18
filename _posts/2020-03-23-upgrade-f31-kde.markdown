@@ -260,8 +260,10 @@ Only Firefox and Thunderbird are restored; for others, sometimes some are, somet
 
 ---
 #### krunner
-  - Programs opened have a different interface and a different icon in Task Switcher from those of ones opened from Application Menu
   - ~~To toggle krunner with Meta key, `invokeShortcut,run command` can't be used anymore~~ [workaround]({% post_url 2020-03-25-toggle-krunner-plasma-5.17 %})
+  - ~~Programs opened have a different interface and a different icon in Task Switcher from those of ones opened from Application Menu~~  
+  It turns out to be Fusion style (_System Settings_ > _Application Style_ > _Application Style_). Reason unknown. Being asked [here](https://www.reddit.com/r/kde/comments/g3jwyy/some_apps_are_in_fusion_style_while_the_style_in/).  
+  __Workaround__: create a symlink to `/usr/share/kglobalaccel/krunner.desktop` in `/etc/xdg/autostart/`, or just use Alt+Space/Alt+F2 to start KRunner for the first time after system startup. After that using the assigned key combination to execute the script will bring up KRunner with the normal application style.
 
 ---
 #### TorBrowser can't start, no log exists
