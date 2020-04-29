@@ -5,7 +5,7 @@ date: 2020-04-07 12:00:00 +0100
 tags: [grubby, grub2, boot, bootloaderspec, f31, fedora, troubleshoot]
 ---
 
-My machine running Fedora 30 was upgraded to version 31 on March 21st. When rebooting I got no grub menu and a [fatal error]({{ '/2020/03/23/upgrade-f31-kde.html#delcreating-boot-menu-and-booting-updel' | relative_url }}). This post is about what I have done to resolve this issue.
+My machine running Fedora 30 was upgraded to version 31 on March 21st. When rebooting I got no grub menu and a [fatal error]({{ '/posts/upgrade-f31-kde#delcreating-boot-menu-and-booting-updel' | relative_url }}). This post is about what I have done to resolve this issue.
 
 # How to make changes to your system when you can't boot into it
 

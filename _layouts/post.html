@@ -1,6 +1,5 @@
 ---
 layout: default
-comments: true
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -11,9 +10,9 @@ comments: true
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
-      {%- if page.author -%}
+      <!--{%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
+      {%- endif -%}</p>-->
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
@@ -24,15 +23,17 @@ comments: true
     {%- include disqus_comments.html -%}
   {%- endif -%}
   
-  <form method="POST" action="https://staticman-phunh-gh.herokuapp.com/v2/entry/phunh/phunh.github.io/master/comments">
-      <input name="options[redirect]" type="hidden" value="{{ page.url }}">
+  <!--<form method="POST" action="https://staticman-phunh-gh.herokuapp.com/v2/entry/phunh/phunh.github.io/master/comments">
+      <input name="options[redirect]" type="hidden" value="{{ page.url }}">-->
     <!-- e.g. "2016-01-02-this-is-a-post" -->
-    <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+    <!--<input name="options[slug]" type="hidden" value="{{ page.slug }}">
     <label><input name="fields[name]" type="text">Name</label>
     <label><input name="fields[email]" type="email">E-mail</label>
     <label><textarea name="fields[message]"></textarea>Message</label>
     <button type="submit">Go!</button>
-  </form>
+  </form>-->
+  
+  {% include comments.html %}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
