@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
 You can see my full name down there but I prefer to be called just by my first name, Phu.
