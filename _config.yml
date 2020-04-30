@@ -22,19 +22,15 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://phunh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: phuhnguyen
 github_username:  phunh
-disqus:
-  shortname: phunh-github-io
 
-emptyArray: []
-comments:
-  receiver: https://staticman-phunh-gh.herokuapp.com/v2/entry/phunh/phunh.github.io/master/comments
-    
+staticman_url: https://staticman-phunh-gh.herokuapp.com/v2/entry/phunh/phunh.github.io/master/comments
 permalink: /:categories/:slug
 defaults:
   - scope:
       path: ""
       type: "posts"
     values:
+      comments: true
       commenting: open
       category: posts
       author: Phu
