@@ -13,8 +13,10 @@
       </div>
     </main>
     <script>
-      anchors.options.placement = 'right';
-      anchors.add('.anchored');
+      anchors.options = {
+        placement: 'right'
+      }
+      anchors.add('.post-content > h2, .post-content > h3, .post-content > h4, .post-content > h5, .post-content > h6, .anchored');
     </script>
 
     {%- include footer.html -%}

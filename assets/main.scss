@@ -35,7 +35,7 @@
  * Link placement and hover behavior.
  */
 .anchorjs-link {
-  color: inherit !important;
+  color: inherit;
   text-decoration: none !important; /* do not underline */
 }
 
@@ -55,6 +55,7 @@
 
 *:hover > .anchorjs-link:hover,
 .anchorjs-link:focus {
+  color: #ff5231;
   text-decoration: none !important; /* do not underline */
   opacity: 1;
 }
