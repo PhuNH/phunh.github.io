@@ -9,9 +9,9 @@
     {% else %}
     {{ include.name | strip_html }} on
     {% endif %}
-    <span class="comment__date">
+    <span class="comment__date anchored" data-anchor-id="{{ comment_id }}">
       {%- if include.date -%}
-        <a href="#{{ comment_id }}" title="{{ include.date | date_to_rfc822 }}">
+        <span title="{{ include.date | date_to_rfc822 }}">
         {{ include.date | date: '%B' }}
         {% assign d = include.date | date: "%e" %}
         {% case d %}
@@ -21,7 +21,7 @@
           {% else %}{{d}}th,
         {% endcase %}
         {{ include.date | date: '%Y' }}
-        </a>
+        </span>
       {%- endif -%}
     </span>
   </div>
