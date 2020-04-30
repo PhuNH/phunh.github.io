@@ -7,7 +7,7 @@ tags: [grubby, grub2, boot, bootloaderspec, f31, fedora, troubleshoot]
 
 My machine running Fedora 30 was upgraded to version 31 on March 21st. When rebooting I got no grub menu and a [fatal error]({{ '/posts/upgrade-f31-kde#delcreating-boot-menu-and-booting-updel' | relative_url }}). This post is about what I have done to resolve this issue.
 
-# How to make changes to your system when you can't boot into it
+#### How to make changes to your system when you can't boot into it
 
 You need a live system! Or maybe there are better ways but so far this is the best I know of. I also heard about _rescue mode_ but people seem to have to wait at that error screen for quite a long time before the mode activates, so a reset might be faster.
 
@@ -30,7 +30,7 @@ From the live system, you can use `chroot` command to basically operate as if yo
 # and now it's like we are in the system we need to repair
 {% endhighlight %}
 
-# The problem
+#### The problem
 
 From the chroot-ed system I could check log with _journalctl_ and saw an error message "_grubby fatal error: unable to find a suitable template_". I also checked _grub.cfg_ in both _/boot/grub2/_ and _/boot/efi/EFI/fedora/_, since the problem might be with grub, and saw in both a huge amount of the root partition's UUID repeated in the default kernel option:
 
@@ -50,7 +50,7 @@ The grub config files again contained the same amount of UUID strings. So _grubb
 
 Should I continue running `grub2-mkconfig` everytime I update the kernel? I don't want to have error logs either, so no. At this point it's all about _grubby_: the `new-kernel-pkg` script called grubby to change the grub config file and then got a bad file, grubby also wanted a template which seemed to not exist. So let's read grubby code to see what it does.
 
-# The reason
+#### The reason
 
 From [Fedora 30][f30-bls], BootLoaderSpec (BLS)-style config files have been made the default for configuring the bootloader's menu entries. I don't actually know when it came to my machine, just remember that at some point when running `grub2-mkconfig` I didn't see Fedora entries anymore, only the Windows one. And since after using `grub2-mkconfig` to recreate _grub.cfg_ I could boot normally, it's safe to assume that what it creates is good with grub and BLS:
 
