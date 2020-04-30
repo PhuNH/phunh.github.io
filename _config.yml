@@ -15,6 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Foo or Phu?
 author: Phu Hung Nguyen
+author_short: Phu
 email: admin@phunh.engineer
 description: >- # this means to ignore newlines until "baseurl:"
   Built with Jekyll, Staticman, GoatCounter
