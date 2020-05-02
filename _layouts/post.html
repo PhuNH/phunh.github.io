@@ -7,9 +7,23 @@ layout: default
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
+        Published on {% include date.html date=page.date %}
       </time>
+      
+      {% for item in site.data.mtimes %}
+        {% if item.id == page.id %}
+          {% assign mtime = item.mtime %}
+        {% endif %}
+      {% endfor %}
+      {% if mtime %}
+        {% assign mtimeStr = mtime | date_to_rfc822 %}
+        {% assign pageDateStr = page.date | date_to_rfc822 %}
+        {% if mtimeStr != pageDateStr %}
+        • Updated on <time class="dt-updated" datetime="{{ mtime | date_to_xmlschema }}" itemprop="dateUpdated">
+        {% include date.html date=mtime %}
+      </time>
+        {% endif %}
+      {% endif %}
       <!--{%- if page.author -%}
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>-->
