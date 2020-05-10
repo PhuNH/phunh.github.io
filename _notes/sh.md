@@ -1,3 +1,8 @@
+---
+layout: post
+name: Shell
+---
+
 Math
 - \*
 - bc -l
@@ -26,7 +31,7 @@ Arrays
 
 Braces
 - sequence: { .. }, a{0..4}c, {1..3}{a..c}; with variables: eval echo {$start..$end} : 4 5 6 7 8 9 with $start = 4 and $end = 9
-- combine: {{1..3},{a..c}}
+- combine: {% raw %}{{1..3},{a..c}}{% endraw%}
 
 Loops
 - for i in 1 2 3

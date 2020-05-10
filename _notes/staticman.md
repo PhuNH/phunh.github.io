@@ -1,5 +1,6 @@
 ---
 layout: post
+name: Staticman
 title: "Notes on using Staticman"
 date: 2020-03-10 18:00:00 +0100
 tags: [staticman, github]

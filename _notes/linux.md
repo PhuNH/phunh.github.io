@@ -1,3 +1,8 @@
+---
+layout: post
+name: Linux
+---
+
 _[F] means "Fedora specific"_
 
 ## Terminal option types:
