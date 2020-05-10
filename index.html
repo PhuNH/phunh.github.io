@@ -2,11 +2,11 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
+title: Posts
 layout: home
 ---
 
 {%- if site.posts.size > 0 -%}
-  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
   <ul class="post-list">
     {% assign posts_by_mtime = site.data.mtimes | sort: "mtime" | reverse %}
     {% for item in posts_by_mtime %}

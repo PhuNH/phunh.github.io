@@ -35,6 +35,10 @@ defaults:
       commenting: open
       category: posts
       author: Phu
+      
+collections:
+  notes:
+    output: true
 
 # Build settings
 markdown: GFM
