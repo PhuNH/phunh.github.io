@@ -28,10 +28,8 @@
   </div>
 </article>
 
-  {%- capture this_uid %}{{ include.uid }}{% endcapture %}
-  {%- assign replies = site.data.comments[page.slug] | where_exp: 'item', 'item.reply_to == this_uid' %}
-  {%- assign replies_by_date = replies | sort: 'date' %}
-  {% for reply in replies_by_date %}
+  {%- assign replies = include.comments | where_exp: 'item', 'item.reply_to == include.uid' | sort: 'date' %}
+  {% for reply in replies %}
     {% include comment.html email=reply.email name=reply.name url=reply.url date=reply.date message=reply.message uid=reply._id reply_to=reply.reply_to %}
   {% endfor %}
 

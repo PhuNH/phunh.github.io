@@ -1,14 +1,21 @@
 <section class="comments" id="comment-section">
   <hr>
-  {% assign comments = site.data.comments[page.slug] %}
-  {% assign comment_count = comments | size %}
+  {% assign slug = page.slug | slugify: "latin" %}
+  {% assign comments_props = site.data.comments[slug] %}
+  {% assign props_array = '' | split: '' %}
+  {% for entry in site.data.comments[slug] %}
+  {% assign props_array = props_array | concat: entry %}
+  {% endfor %}
+  {% assign comments_array = props_array | where_exp: "entry", "entry['_id'] != nil" %}
+  {% assign first_level = comments_array | where_exp: "item", "item.reply_to == ''" | sort: 'date' %}
+  
+  {% assign comment_count = comments_array | size %}
   {% unless comment_count == 0 %}
   <!-- Existing comments -->
   <div class="comments__existing">
     <h2>{% if comment_count == 1 %}One comment{% else %}{{ comment_count }} comments{% endif %}</h2>
-    {% assign first_level_by_date = comments | where_exp: "item", "item.reply_to == ''" | sort: 'date' %}
-    {% for comment in first_level_by_date %}
-      {% include comment.html email=comment.email name=comment.name url=comment.url date=comment.date message=comment.message uid=comment._id reply_to=comment.reply_to %}
+    {% for comment in first_level %}
+      {% include comment.html comments=comments_array email=comment.email name=comment.name url=comment.url date=comment.date message=comment.message uid=comment._id reply_to=comment.reply_to %}
     {% endfor %}
   </div>
   {% endunless %}
