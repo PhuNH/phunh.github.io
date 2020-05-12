@@ -1,10 +1,9 @@
 <section class="comments" id="comment-section">
   <hr>
-  {% assign slug = page.slug | slugify: "latin" %}
-  {% assign comments_props = site.data.comments[slug] %}
+  {% assign slug = page.slug | slugify: "ascii" %}
   {% assign props_array = '' | split: '' %}
   {% for entry in site.data.comments[slug] %}
-  {% assign props_array = props_array | concat: entry %}
+    {% assign props_array = props_array | concat: entry %}
   {% endfor %}
   {% assign comments_array = props_array | where_exp: "entry", "entry['_id'] != nil" %}
   {% assign first_level = comments_array | where_exp: "item", "item.reply_to == ''" | sort: 'date' %}
