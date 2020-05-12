@@ -1,11 +1,11 @@
 - id: /posts/problem-grubby-f31
-  mtime: Apr 23, 2020
+  mtime: "2020-04-23"
   
 - id: /posts/upgrade-f31-kde
-  mtime: Apr 30, 2020
+  mtime: "2020-04-30"
   
-#- id: /posts/staticman-notes
-  #mtime: May 1, 2020
+- id: /posts/jekyll-slug
+  mtime: "2020-05-11"
 
 - id: /posts/toggle-krunner-plasma-5.17
-  mtime: 25 Mar 2020 12:00:00 +0100
+  mtime: "2020-03-25"
