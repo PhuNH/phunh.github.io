@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "grubby and BootLoaderSpec - and grubby-deprecated"
-date: 2020-04-07 12:00:00 +0100
 tags: [grubby, grub2, boot, bootloaderspec, f31, fedora, troubleshoot]
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Toggle KRunner in Plasma 5.17"
-date: 2020-03-25 12:00:00 +0100
 tags: [kde, plasma 5.17, krunner, workaround]
 ---
 

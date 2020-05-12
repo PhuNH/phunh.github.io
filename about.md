@@ -5,4 +5,6 @@ title: About
 
 You can see my full name down there but I prefer to be called just by my first name, Phu.
 
-Here I write about useful things I do.
+Here I write about things I find interesting and/or useful.
+
+Built with Jekyll, Staticman, GoatCounter.

@@ -1,17 +1,23 @@
 <section class="comments" id="comment-section">
   <hr>
-  {% if site.data.comments[page.slug] %}
+  {% assign slug = page.slug | slugify: "ascii" %}
+  {% assign props_array = '' | split: '' %}
+  {% for entry in site.data.comments[slug] %}
+    {% assign props_array = props_array | concat: entry %}
+  {% endfor %}
+  {% assign comments_array = props_array | where_exp: "entry", "entry['_id'] != nil" %}
+  {% assign first_level = comments_array | where_exp: "item", "item.reply_to == ''" | sort: 'date' %}
+  
+  {% assign comment_count = comments_array | size %}
+  {% unless comment_count == 0 %}
   <!-- Existing comments -->
   <div class="comments__existing">
-    {% assign all_comment_count = site.data.comments[page.slug] | size %}
-    <h2>{% if all_comment_count == 1 %}One comment{% else %}{{ all_comment_count }} comments{% endif %}</h2>
-    {% assign comments = site.data.comments[page.slug] | where_exp: "item", "item.reply_to == ''" %}
-    {% assign comments_by_date = comments | sort: 'date' %}
-    {% for comment in comments_by_date %}
-      {% include comment.html email=comment.email name=comment.name url=comment.url date=comment.date message=comment.message uid=comment._id reply_to=comment.reply_to %}
+    <h2>{% if comment_count == 1 %}One comment{% else %}{{ comment_count }} comments{% endif %}</h2>
+    {% for comment in first_level %}
+      {% include comment.html comments=comments_array email=comment.email name=comment.name url=comment.url date=comment.date message=comment.message uid=comment._id reply_to=comment.reply_to %}
     {% endfor %}
   </div>
-  {% endif %}
+  {% endunless %}
 
   <!-- New comment form -->
   {% if page.commenting == 'open' %}

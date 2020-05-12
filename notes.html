@@ -1,0 +1,21 @@
+---
+title: Notes
+layout: home
+---
+
+{%- if site.notes.size > 0 -%}
+  <ul class="post-list">
+    {%- for note in site.notes -%}
+      <li>
+        <h3>
+          <a class="post-link" href="{{ note.url | relative_url }}">
+            {{ note.name | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+    {% endfor %}
+  </ul>
+{%- endif -%}
