@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Upgrading to Fedora 31, Scientific edition"
+mtime: "2020-04-30"
 tags: [fedora, f31, kde, log, troubleshoot]
 ---
 

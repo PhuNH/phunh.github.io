@@ -7,28 +7,24 @@ layout: home
 ---
 
 {%- if site.posts.size > 0 -%}
+  {% assign posts_by_mtime = site.posts | sort: "mtime" | reverse %}
   <ul class="post-list">
-    {% assign posts_by_mtime = site.data.mtimes | sort: "mtime" | reverse %}
-    {% for item in posts_by_mtime %}
-      {%- for post in site.posts -%}
-        {% if post.id == item.id %}
-          {% assign mtimeStr = item.mtime | date_to_rfc822 %}
-          {% assign postDateStr = post.date | date_to_rfc822 %}
-          <li>
-            <span class="post-meta">
-              {% if postDateStr != mtimeStr %}Updated on {% endif %}{% include date.html date=item.mtime %}
-            </span>
-            <h3>
-              <a class="post-link" href="{{ post.url | relative_url }}">
-                {{ post.title | escape }}
-              </a>
-            </h3>
-            {%- if site.show_excerpts -%}
-              {{ post.excerpt }}
-            {%- endif -%}
-          </li>
-        {% endif %}
-      {%- endfor -%}
+    {% for post in posts_by_mtime %}
+      {% assign mtimeStr = post.mtime | date_to_rfc822 %}
+      {% assign dateStr = post.date | date_to_rfc822 %}
+      <li>
+        <span class="post-meta">
+          {% if dateStr != mtimeStr %}Updated on {% endif %}{% include date.html date=post.mtime %}
+        </span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
     {% endfor %}
   </ul>
 
