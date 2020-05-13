@@ -15,7 +15,7 @@ Staticman is the middle man who pushes comments on a GH site as commits from an 
 - _\*ocker\*_: for installing and deploying Staticman using Docker,
 - _siteConfig.js_: manages configs of Staticman for the site,
 - _staticman.sample.yml_: a sample to create _staticman.yml_ which is the site config file and must be put in the site's repo.
-- _staticman\_key.pub_: no idea about this file.
+- _staticman\_key.pub_: key to encrypt sensitive fields in the site config file _staticman.yml_.
 
 ### For v2
 - Scope of the token: `public_repo` is enough if the site repo is public, otherwise `repo` is needed for accessing a private repo.
