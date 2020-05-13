@@ -1,6 +1,7 @@
 ---
 layout: post
-name: Linux
+title: Linux
+mtime: "2020-05-14"
 ---
 
 _[F] means "Fedora specific"_

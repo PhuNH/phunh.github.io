@@ -1,6 +1,7 @@
 ---
 layout: post
-name: Scala
+title: Scala
+mtime: "2020-05-14"
 ---
 
 Call-by-value - Call-by-name

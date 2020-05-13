@@ -7,14 +7,19 @@ layout: home
   <ul class="post-list">
     {%- for note in site.notes -%}
       <li>
+        <span class="post-meta">
+          Last updated: {% include date.html date=note.mtime %}
+        </span>
         <h3>
           <a class="post-link" href="{{ note.url | relative_url }}">
-            {{ note.name | escape }}
+            {{ note.title | escape }}
           </a>
         </h3>
+        {% comment %}
         {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+          {{ note.excerpt }}
         {%- endif -%}
+        {% endcomment %}
       </li>
     {% endfor %}
   </ul>

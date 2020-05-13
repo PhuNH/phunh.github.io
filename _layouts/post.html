@@ -6,23 +6,22 @@ layout: default
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        Published on {% include date.html date=page.date %}
-      </time>
-      
-      {% for item in site.data.mtimes %}
-        {% if item.id == page.id %}
-          {% assign mtime = item.mtime %}
+      {% if page.collection == 'posts' %}
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          Published: {% include date.html date=page.date %}
+        </time>
+        
+        {% assign mtimeStr = page.mtime | date_to_rfc822 %}
+        {% assign dateStr = page.date | date_to_rfc822 %}
+        {% if mtimeStr != dateStr %}
+        <time class="dt-updated" datetime="{{ page.mtime | date_to_xmlschema }}" itemprop="dateUpdated">
+          • Updated: {% include date.html date=page.mtime %}
+        </time>
         {% endif %}
-      {% endfor %}
-      {% if mtime %}
-        {% assign mtimeStr = mtime | date_to_rfc822 %}
-        {% assign pageDateStr = page.date | date_to_rfc822 %}
-        {% if mtimeStr != pageDateStr %}
-        • Updated on <time class="dt-updated" datetime="{{ mtime | date_to_xmlschema }}" itemprop="dateUpdated">
-        {% include date.html date=mtime %}
-      </time>
-        {% endif %}
+      {% else %}
+        <time class="dt-updated" datetime="{{ page.mtime | date_to_xmlschema }}" itemprop="dateUpdated">
+          Last updated: {% include date.html date=page.mtime %}
+        </time>
       {% endif %}
       
       {% capture words %}{{ page.content | number_of_words | minus: 250 }}{% endcapture %}
