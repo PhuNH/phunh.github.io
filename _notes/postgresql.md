@@ -2,6 +2,7 @@
 layout: post
 title: PostgreSQL
 mtime: "2020-05-14"
+tags: [postgresql, psql, linux, fedora]
 ---
 
 Server version:

@@ -2,6 +2,7 @@
 layout: post
 title: Scala
 mtime: "2020-05-14"
+tags: [scala]
 ---
 
 ### Call-by-value - Call-by-name

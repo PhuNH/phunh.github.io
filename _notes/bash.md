@@ -2,6 +2,7 @@
 layout: post
 title: Bash
 mtime: "2020-05-14"
+tags: [bash, linux]
 ---
 
 ### Math

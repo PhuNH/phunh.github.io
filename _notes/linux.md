@@ -2,6 +2,7 @@
 layout: post
 title: Linux
 mtime: "2020-05-14"
+tags: [linux, fedora, nvidia, optimus]
 ---
 
 _[F] means "Fedora specific"_

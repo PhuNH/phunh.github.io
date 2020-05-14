@@ -2,6 +2,7 @@
 layout: post
 title: Staticman
 mtime: "2020-05-13"
+tags: [staticman, jekyll, akismet]
 ---
 
 ### Structure

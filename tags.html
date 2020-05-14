@@ -3,7 +3,12 @@ title: Tags
 layout: home
 ---
 
-{%- if site.tags.size > 0 -%}
+{% assign note_tags = '' | split: '' %}
+{% for note in site.notes %}
+  {% assign note_tags = note_tags | concat: note.tags %}
+{% endfor %}
+
+{%- if site.tags.size > 0 or note_tags.size > 0 -%}
   {% capture labels %}
     {%- for entry in site.tags -%}
       {{entry[0]}}
@@ -11,14 +16,25 @@ layout: home
     {%- endfor -%}
   {% endcapture %}
   {% assign labels_array = labels | split: "|" %}
+  {% assign labels_array = labels_array | concat: note_tags | uniq %}
+
   <div class="post-tags">{% include labels.html labels=labels_array %}</div>
 
-  {% for tag in site.tags %}
-    <h3 class="anchored">{{ tag[0] }}</h3>
+  {% for label in labels_array %}
+    <h3 class="anchored">{{ label }}</h3>
     <ul>
-    {% for post in tag[1] %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
+    {% if site.tags[label] %}
+      {% for post in site.tags[label] %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    {% endif %}
+    {% if note_tags contains label %}
+      {% for note in site.notes %}
+        {% if note.tags contains label %}
+          <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
     </ul>
   {% endfor %}
 {% else %}
