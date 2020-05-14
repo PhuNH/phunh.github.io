@@ -8,7 +8,7 @@ layout: home
     {%- for note in site.notes -%}
       <li>
         <span class="post-meta">
-          Last updated: {% include date.html date=note.mtime %}
+          Last updated: {% include date.html date=note.last_modified_at %}
         </span>
         <h3>
           <a class="post-link" href="{{ note.url | relative_url }}">

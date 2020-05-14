@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux
-mtime: "2020-05-14"
+last_modified_at: "2020-05-14"
 tags: [linux, fedora, nvidia, optimus]
 ---
 

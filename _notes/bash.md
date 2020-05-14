@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bash
-mtime: "2020-05-14"
+last_modified_at: "2020-05-14"
 tags: [bash, linux]
 ---
 

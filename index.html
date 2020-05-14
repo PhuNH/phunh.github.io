@@ -7,14 +7,14 @@ layout: home
 ---
 
 {%- if site.posts.size > 0 -%}
-  {% assign posts_by_mtime = site.posts | sort: "mtime" | reverse %}
+  {% assign posts_by_mtime = site.posts | sort: "last_modified_at" | reverse %}
   <ul class="post-list">
     {% for post in posts_by_mtime %}
-      {% assign mtimeStr = post.mtime | date_to_rfc822 %}
+      {% assign mtimeStr = post.last_modified_at | date_to_rfc822 %}
       {% assign dateStr = post.date | date_to_rfc822 %}
       <li>
         <span class="post-meta">
-          {% if dateStr != mtimeStr %}Updated on {% endif %}{% include date.html date=post.mtime %}
+          {% if dateStr != mtimeStr %}Updated on {% endif %}{% include date.html date=post.last_modified_at %}
         </span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
