@@ -37,6 +37,10 @@ layout: default
     {{ content }}
   </div>
   
+  {% if page.tags.size > 0 %}
+  <div class="post-tags">Tagged: {% include labels.html labels=page.tags %}</div>
+  {% endif %}
+
   {% if page.comments == true %}
     {% include comments.html %}
   {% endif %}
