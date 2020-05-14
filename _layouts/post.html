@@ -11,16 +11,16 @@ layout: default
           Published: {% include date.html date=page.date %}
         </time>
         
-        {% assign mtimeStr = page.mtime | date_to_rfc822 %}
+        {% assign mtimeStr = page.last_modified_at | date_to_rfc822 %}
         {% assign dateStr = page.date | date_to_rfc822 %}
         {% if mtimeStr != dateStr %}
-        <time class="dt-updated" datetime="{{ page.mtime | date_to_xmlschema }}" itemprop="dateUpdated">
-          • Updated: {% include date.html date=page.mtime %}
+        <time class="dt-updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateUpdated">
+          • Updated: {% include date.html date=page.last_modified_at %}
         </time>
         {% endif %}
       {% else %}
-        <time class="dt-updated" datetime="{{ page.mtime | date_to_xmlschema }}" itemprop="dateUpdated">
-          Last updated: {% include date.html date=page.mtime %}
+        <time class="dt-updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateUpdated">
+          Last updated: {% include date.html date=page.last_modified_at %}
         </time>
       {% endif %}
       
