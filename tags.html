@@ -1,0 +1,26 @@
+---
+title: Tags
+layout: home
+---
+
+{%- if site.tags.size > 0 -%}
+  {% capture labels %}
+    {%- for entry in site.tags -%}
+      {{entry[0]}}
+      {%- if forloop.last == false -%}|{%- endif -%}
+    {%- endfor -%}
+  {% endcapture %}
+  {% assign labels_array = labels | split: "|" %}
+  <div class="post-tags">{% include labels.html labels=labels_array %}</div>
+
+  {% for tag in site.tags %}
+    <h3 class="anchored">{{ tag[0] }}</h3>
+    <ul>
+    {% for post in tag[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endfor %}
+{% else %}
+  There is no tag at all.
+{%- endif -%}

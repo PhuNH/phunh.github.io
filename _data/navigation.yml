@@ -4,5 +4,8 @@
 - name: notes
   link: "/notes"
   
+- name: tags
+  link: "/tags"
+
 - name: about
   link: "/about"

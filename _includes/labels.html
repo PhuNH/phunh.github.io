@@ -1,0 +1,4 @@
+{% for label in include.labels %}
+  {% if forloop.first != true %} • {% endif %}
+  <span class="post-tag" title="{{ site.tags[label].size }}"><a href="/tags#{{label | slugify}}">{{label}}</a></span>
+{% endfor %}
