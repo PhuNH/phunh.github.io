@@ -1,4 +1,4 @@
-name: Jekyll site onto GH Pages
+name: deploy
 
 on:
   push:
