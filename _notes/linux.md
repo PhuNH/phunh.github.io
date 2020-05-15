@@ -12,6 +12,9 @@ _[F] means "Fedora specific"_
 - UNIX options: may be grouped, must be preceded by a dash
 - GNU long options: are preceded by two dashes
 
+### Directories:
+- Wifi passwords: _/etc/sysconfig/network-scripts_
+
 ### _/etc/shadow_:
 - Stores user passwords and expiration information
 - Second field:
