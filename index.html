@@ -14,7 +14,8 @@ layout: home
       {% assign dateStr = post.date | date_to_rfc822 %}
       <li>
         <span class="post-meta">
-          {% if dateStr != mtimeStr %}Updated on {% endif %}{% include date.html date=post.last_modified_at %}
+          {% if dateStr != mtimeStr %}Updated {{ post.last_modified_at | timeago }}
+          {% else %}{% include date.html date=post.last_modified_at %}{% endif %}
         </span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">

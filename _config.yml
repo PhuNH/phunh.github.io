@@ -24,7 +24,6 @@ url: "https://phunh.github.io" # the base hostname & protocol for your site, e.g
 twitter_username: phuhnguyen
 github_username:  phunh
 
-staticman_url: https://staticman-phunh-gh.herokuapp.com/v2/entry/phunh/phunh.github.io/master/comments
 permalink: /:categories/:slug
 defaults:
   - scope:
@@ -40,13 +39,11 @@ collections:
   notes:
     output: true
 
+staticman_url: https://staticman-phunh-gh.herokuapp.com/v2/entry/phunh/phunh.github.io/master/comments
+
 # Build settings
-markdown: GFM
+markdown: kramdown
 theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
