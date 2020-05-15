@@ -25,20 +25,28 @@ twitter_username: phuhnguyen
 github_username:  phunh
 
 permalink: /:categories/:slug
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      comments: true
-      commenting: open
-      category: posts
-      author: Phu
-      
 collections:
   notes:
     output: true
 
+defaults:
+- scope:
+    path: ""
+    type: "posts"
+  values:
+    comments: true
+    commenting: open
+    category: posts
+    author: Phu
+
+- scope:
+    path: ""
+    type: "notes"
+  values:
+    comments: true
+    commenting: open
+    author: Phu
+      
 staticman_url: https://staticman-phunh-gh.herokuapp.com/v2/entry/phunh/phunh.github.io/source/comments
 
 # Build settings
