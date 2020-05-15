@@ -39,7 +39,7 @@ collections:
   notes:
     output: true
 
-staticman_url: https://staticman-phunh-gh.herokuapp.com/v2/entry/phunh/phunh.github.io/master/comments
+staticman_url: https://staticman-phunh-gh.herokuapp.com/v2/entry/phunh/phunh.github.io/source/comments
 
 # Build settings
 markdown: kramdown
