@@ -16,7 +16,7 @@
 title: Foo or Phu?
 author: Phu Hung Nguyen
 author_short: Phu
-email: admin@phunh.engineer
+email: phuhnguyen@disroot.org
 description: >- # this means to ignore newlines until "baseurl:"
   Interesting and/or useful things (to me)
 baseurl: "" # the subpath of your site, e.g. /blog
