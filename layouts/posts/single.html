@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article>
+  <header id="post-header">
+    {{ partial "post_date" . }}
+    {{ partial "single_tagline" . }}
+  </header>
+  {{- .Content -}}
+  <footer>
+  {{ with .NextInSection }}<a class="next" href="{{.Permalink}}">Next >></a>{{end}}
+  {{ with .PrevInSection }}<a href="{{.Permalink}}"><< Prev</a>{{end}}
+  </footer>
+</article>
+{{ end }}

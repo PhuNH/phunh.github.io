@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article>
+  {{ if not .Params.hideMeta }}
+  <header id="post-header">
+    <small><time>{{ .Date.Format $.Site.Params.dateFormat }}</time></small>
+    {{ partial "single_tagline" . }}
+  </header>
+  {{ end }}
+  {{- .Content -}}
+</article>
+{{ end }}

@@ -1,0 +1,5 @@
+<small><time>
+  {{ with .Params.Date }}Updated on {{ .Format $.Site.Params.dateFormat }}
+  {{ else }}{{ .PublishDate.Format $.Site.Params.dateFormat }}
+  {{ end }}
+</time></small>

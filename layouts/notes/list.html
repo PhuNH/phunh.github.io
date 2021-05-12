@@ -1,0 +1,13 @@
+{{ define "main" }}
+<ul id="posts">
+  {{ range .Paginator.Pages }}
+  <li>
+    <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+    {{ partial "note_date" . }}
+    {{ partial "tagline" . }}
+  </li>
+{{ end }}
+</ul>
+
+{{ template "_internal/pagination.html" . }}
+{{ end }}

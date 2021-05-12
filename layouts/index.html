@@ -1,0 +1,12 @@
+{{ define "main" }}
+{{ .Content }}
+
+<ul id="posts">
+  {{- range first 10 (.Site.GetPage "/posts").RegularPages -}}
+  <li>
+    <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+    {{ partial "post_date" . }}
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

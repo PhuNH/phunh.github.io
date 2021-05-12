@@ -1,0 +1,19 @@
+<header id="banner">
+  <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+
+  <nav>
+    <ul>
+      {{ if not .IsHome }}
+      <li>
+        <a href="{{ .Site.BaseURL }}">home</a>
+      </li>
+      {{ end }}
+      {{ $c := . }}
+      {{ range .Site.Menus.main -}}
+      <li>
+        <a {{ if $c.IsMenuCurrent "main" . }}class="active"{{ end }} href="{{ .URL }}">{{- .Name -}}</a>
+      </li>
+      {{- end }}
+    </ul>
+  </nav>
+</header>

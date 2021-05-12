@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article>
+  <header id="post-header">
+    {{ partial "note_date" . }}
+    {{ partial "single_tagline" . }}
+  </header>
+  {{- .Content -}}
+</article>
+{{ end }}

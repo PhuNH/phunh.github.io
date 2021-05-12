@@ -1,0 +1,20 @@
+{{ define "main" }}
+<ul id="posts">
+  {{ range .Paginator.Pages }}
+  <li>
+    <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+    {{ partial "post_date" . }}
+    {{ partial "tagline" . }}
+    <div class="summary">
+      {{ with .Description }}{{ . }}
+      {{ else }}{{ .Summary | markdownify }}
+      {{ end }}
+      {{ if .Truncated }}<a href="{{ .Permalink }}">Read more...</a>
+      {{ end }}
+    </div>
+  </li>
+  {{ end }}
+</ul>
+
+{{ template "_internal/pagination.html" . }}
+{{ end }}

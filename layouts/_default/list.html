@@ -1,0 +1,11 @@
+{{ define "main" }}
+<ul id="posts">
+  {{ range .Paginator.Pages }}
+  <li>
+    <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+  </li>
+  {{ end }}
+</ul>
+
+{{ template "_internal/pagination.html" . }}
+{{ end }}

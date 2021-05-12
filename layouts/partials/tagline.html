@@ -1,0 +1,8 @@
+<div class="tagline">
+  {{- if .Params.tags -}}
+  Tags:
+    {{- range .Params.tags }}
+    &nbsp;<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>
+    {{- end -}}
+  {{ end }}
+</div>

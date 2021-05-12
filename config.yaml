@@ -1,0 +1,31 @@
+author:
+  github: phunh
+  name: Phu Hung Nguyen
+  short: Phu
+  twitter: phuhnguyen
+baseURL: https://phunh.github.io
+disablePathToLower: true
+frontmatter:
+  date:
+  - date
+  publishDate:
+  - publishDate
+languageCode: en-us
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: tango
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 2
+params:
+  dark: auto
+  dateFormat: 2 Jan 2006
+  description: Interesting and/or useful things (to me)
+summaryLength: 30
+taxonomies:
+  tag: tags
+title: Foo or Phu?

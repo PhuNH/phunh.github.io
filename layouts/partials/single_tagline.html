@@ -1,0 +1,11 @@
+<div class="tagline">
+  {{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Author.short }}{{ end }}
+  {{ $t := .ReadingTime }}
+  &emsp;|&emsp;{{$t}} minute{{ if gt $t 1 }}s{{ end }}
+  {{- if .Params.tags -}}
+  &emsp;|&emsp;Tags:
+    {{- range .Params.tags }}
+    &nbsp;<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>
+    {{- end -}}
+  {{ end }}
+</div>
