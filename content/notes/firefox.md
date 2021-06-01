@@ -1,6 +1,6 @@
 ---
 title: Firefox
-date: "2020-07-03"
+date: 2021-06-01
 tags: [firefox, configs]
 ---
 
@@ -20,7 +20,8 @@ tags: [firefox, configs]
   - that permission is also required for Whatsapp Web version to show the QR code,
   - makes Firefox to report UTC time to websites,
   - makes Zoom show a white screen instead of the video and shared screen,
-  - fixes the user-agent to version 68 and Windows 10.
+  - fixes the user-agent to version 78 and Windows 10.
 - **webgl.disabled = false**
-  - needs to be `true` for Notes on iCloud.com to be able to open.
+  - for Notes on iCloud.com to open,
+  - for Zoom to show videos.
 - WebRTC is required to call in Messenger. **media.navigator.enabled** is not.
