@@ -11,7 +11,7 @@
       {{ $c := . }}
       {{ range .Site.Menus.main -}}
       <li>
-        <a {{ if $c.IsMenuCurrent "main" . }}class="active"{{ end }} href="{{ .URL }}">{{- .Name -}}</a>
+        <a {{ if $c.HasMenuCurrent "main" . }}class="active" {{ end }}href="{{ .URL }}">{{- .Name -}}</a>
       </li>
       {{- end }}
     </ul>
