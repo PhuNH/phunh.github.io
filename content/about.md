@@ -11,4 +11,4 @@ You can see my full name down there but I prefer to be called just by my first n
 
 Here I write about things I do related to Linux, Fedora, and KDE. Or maybe other things as well.
 
-Built with Hugo.
+Built with [Hugo](https://gohugo.io/) and [Staticman](https://staticman.net/).
