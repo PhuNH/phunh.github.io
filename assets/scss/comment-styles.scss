@@ -78,36 +78,27 @@ button:hover {
 .comments {
 }
 .comment__new {
-    padding: 0px 0px 14px 0px;
-}
-.comment__author {
-    color: $grey-color;
-}
-.comment__date {
-    font-size: $small-font-size;
-}
-.comment__body {
-    font-size: $comment-font-size;
-}
-.comment__meta {
-    text-align: left;
-    color: $grey-color;
-    font-size: $small-font-size;
-}
-.comments__existing {
-    padding: 8px 0px 0px 0px;
+    padding-bottom: 1em;
 }
 .comment {
-    border-top: 0px solid $grey-color-light;
-    padding: 0px 0px 0px 0px;
     margin-bottom: 1em;
+    display: flex;
 }
 .comment.child {
-    margin-left: 3em;
+    margin-left: 4em;
 }
-.comment__reply-link {
-    color: $grey-color;
-    font-size: $small-font-size;
+.comment-body {
+    margin-left: 1em;
+    flex-grow: 1;
+}
+.comment-info {
+    display: flex;
+    margin-bottom: 1em;
+}
+.comment-author {
+    margin-right: auto;
+}
+.comment-reply {
     cursor: pointer;
 }
 

@@ -1,30 +1,33 @@
 {{ $comment_id := print "comment-" .comment._id }}
 <article id="{{ $comment_id }}" class="js-comment comment{{ with .comment.reply_to }} child{{ end }}" uid="{{ .comment._id }}">
+  <img alt="Gravatar for {{ .comment.name }}" src="https://secure.gravatar.com/avatar/{{ .comment.email }}?s=64&amp;d=retro&amp;r=pg" srcset="https://secure.gravatar.com/avatar/{{ .comment.email }}?s=128&amp;d=retro&amp;r=pg 2x" class="avatar avatar-64 photo" height="64" width="64">
 
-  <div class="comment__author">
-    <img alt="Gravatar for {{ .comment.name }}" src="https://secure.gravatar.com/avatar/{{ .comment.email }}?s=64&amp;d=retro&amp;r=pg" srcset="https://secure.gravatar.com/avatar/{{ .comment.email }}?s=128&amp;d=retro&amp;r=pg 2x" class="avatar avatar-64 photo" height="64" width="64" style="padding-right:5px; padding-bottom:5px;">
-    {{ if and (eq .comment.name site.Author.short) (eq .comment.email "d11c8125547f587477e48ac075b238b3") }}
-    <a class="u-email" href="mailto:phuhnguyen at disroot dot org">{{ .comment.name }}</a> on
-    {{ else }}
-    {{ .comment.name }} on
-    {{ end }}
-    <span class="comment__date anchored" data-anchor-id="{{ $comment_id }}">
-      {{ with .comment.date }}
-      {{ dateFormat site.Params.dateFormat . }}
+  <div class="comment-body">
+    <div class="comment-info">
+      <div class="comment-author">
+      {{ if and (eq .comment.name site.Author.short) (eq .comment.email "d11c8125547f587477e48ac075b238b3") }}
+        <a class="u-email" href="mailto:phuhnguyen at disroot dot org">{{ .comment.name }}</a>
+      {{ else }}
+        {{ .comment.name }}
       {{ end }}
-    </span>
-  </div>
-
-  <div class="comment__body">
-    {{ .comment.message | markdownify }}
-  </div>
+      </div>
+      <div>
+        <small data-anchor-id="{{ $comment_id }}">
+          {{ dateFormat site.Params.dateFormat .comment.date }}
+        </small>
+      </div>
+    </div>
+    <div>
+      {{ .comment.message | markdownify }}
+    </div>
 
 {{ if .comment.reply_to }}
-{{ print "reply to" .comment.reply_to }}
+  </div>
 </article>
 {{ else }}
-  <div class="comment__meta">
-    <a rel="nofollow" class="comment__reply-link" onclick="return addComment.moveForm('{{ $comment_id }}', 'respond', '{{ .comment._id }}')">↪&#xFE0E; Reply to {{ .comment.name }}</a>
+    <small>
+      <a rel="nofollow" class="comment-reply" onclick="return addComment.moveForm('{{ $comment_id }}', 'respond', '{{ .comment._id }}')">↪&#xFE0E; Reply to {{ .comment.name }}</a>
+    </small>
   </div>
 </article>
 

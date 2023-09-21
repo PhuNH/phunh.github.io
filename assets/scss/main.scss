@@ -104,18 +104,12 @@ main#content {
   a { color: #007dfa; text-decoration: none; }
   a:hover { text-decoration: underline; }
   a.tag { color: #394548; }
-  h1, h2, h3, h4, h5, h6 { margin-bottom: 0; line-height: 1.15; }
   h3 {
     font-size: 19px;
     font-size: 1.9rem;
   }
   h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p { margin-top: 5px; }
   p { color: #394548; margin: 16px 0; }
-  hr {
-    height: 1px;
-    border: 0;
-    background: #d8d8d8;
-  }
 }
 
 /* index.html styles */
@@ -192,7 +186,6 @@ main#content {
   }
   img {
     max-width: 100%;
-    margin: 0 auto;
   }
   figure {
     margin: 16px 0;

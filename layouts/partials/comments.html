@@ -11,7 +11,7 @@
   {{ $first_level := sort $f "date" }}
   {{ $comment_count := len $comments }}
   <!-- Existing comments -->
-  <div class="comments__existing">
+  <div>
     <h2>{{ if eq $comment_count 1 }}One comment{{ else }}{{ $comment_count }} comments{{ end }}</h2>
     {{ range $first_level }}
       {{ partial "comment.html" (dict "comments" $comments "comment" .) }}
