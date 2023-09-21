@@ -24,7 +24,7 @@ params:
   dark: auto
   dateFormat: 2 Jan 2006
   description: Interesting and/or useful things (to me)
-  staticman_url: https://phunh-staticman.onrender.com/v2/entry/phunh/phunh.github.io/source/comments
+  staticman_url: https://phunh-staticman.onrender.com/v2/entry/phunh/phunh.github.io/main/comments
 summaryLength: 30
 taxonomies:
   tag: tags
