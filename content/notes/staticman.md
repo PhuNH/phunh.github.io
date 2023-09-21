@@ -22,7 +22,6 @@ Staticman is the middle man who pushes comments on a GH site as commits from an 
 
 ### Other notes
 - Webhook payload URL is `/v1/webhook`. This function still works, even though the test request sent by GH after the webhook is added seems to fail.
-- The site URL set up on Akismet and the `akismet.site` config should both be the URL of where you host Staticman. The comment form sends form data to Staticman at this URL, Akismet also tries to catch spams at this URL, those `akismet` fields in `staticman.yml` are for Akismet to know what data it receives.
 
 [trav-downs-acc]: https://travisdowns.github.io/blog/2020/02/05/now-with-comments.html#set-up-github-bot-account
 [trav-downs-token]: https://travisdowns.github.io/blog/2020/02/05/now-with-comments.html#generate-personal-access-token
