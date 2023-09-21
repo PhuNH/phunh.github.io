@@ -13,15 +13,15 @@ tags: [bash, linux]
 
 ### Commands
 - command substitution:
-```
-$(command)
-`command`
-```
+  ```
+  $(command)
+  `command`
+  ```
 - `()`: runs commands in a subshell
 - `{}`: runs commands in the current shell
 
 ### Variables
-- assigments: no space on either side of the equal sign
+- assignments: no space on either side of the equal sign
 - global by default
 - `$@`: list of arguments; `$1`, `$2`, etc: first, second, etc. argument; `$#`: number of arguments
 
@@ -31,8 +31,15 @@ $(command)
 ### Logic and If-else
 - `$?`: last exit status. `&&` continues only after `$?` == 0, `||` continues only after `$?` != 0
 - conditional expression: `[ ]` POSIX compliant, `[[ ]]` extension to the standard, supporting extra operations
-+ logical flags: `[[ 4 -gt 3 ]] && echo t || echo f` : prints t; `[[ -e math.sh ]]` : checks if a file exists; `-d` : a dir exists; `-z`, `-n`: string length is zero, non-zero
-+ logical operators: regex: `[[ "sean" =~ ^s.+n$ ]] && echo t || echo f` : prints t; NOT: `[[ ! 7 -gt 2 ]] && echo t || echo f` : prints f; `=`, `!=` : string equal, not equal
+- logical flags:
+  - `[[ 4 -gt 3 ]] && echo t || echo f` : prints t;
+  - `[[ -e math.sh ]]` : checks if a file exists;
+  - `-d` : a dir exists;
+  - `-z`, `-n`: string length is zero, non-zero
+- logical operators:
+  - regex: `[[ "sean" =~ ^s.+n$ ]] && echo t || echo f` : prints t;
+  - NOT: `[[ ! 7 -gt 2 ]] && echo t || echo f` : prints f;
+  - `=`, `!=` : string equal, not equal
 
 ### Arrays
 - indexed and associative
@@ -43,7 +50,7 @@ $(command)
 
 ### Braces
 - sequence: `{ .. }`, `a{0..4}c`, `{1..3}{a..c}`; with variables: `start=4; end=9; eval echo {$start..$end}` : 4 5 6 7 8 9
-- combine: `{% raw %}{{1..3},{a..c}}{% endraw%}`
+- combine: `{{1..3},{a..c}}`
 
 ### Loops
 ```
@@ -60,11 +67,11 @@ done
 ```
 
 ### Functions
-{%highlight bash%}
+{{<highlight bash >}}
 #f () {
 function f {
   local result=0
   ...
   echo $result
 }
-{%endhighlight%}
+{{</highlight >}}

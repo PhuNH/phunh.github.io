@@ -7,7 +7,7 @@ tags: [scala]
 ### Call-by-value - Call-by-name
 - CBV: arguments are evaluated before substituting the function call with the function's RHS and the parameters with values
 - CBN: substituting function and parameters then evaluating parameters
-- By default, parameters are CBV. Use =>, e.g. `(x: Int, y: => Int)`, for CBN
+- By default, parameters are CBV. Use `=>`, e.g. `(x: Int, y: => Int)`, for CBN
 - `def`: by-name - `val`: by-value
 
 ### Tail recursion:
@@ -18,11 +18,11 @@ tags: [scala]
 `for` expression <=> `flatMap`, `withFilter`, and `map`
 
 ### Methods
-To define a prefix operator, write: `def unary_- : <type> = {}`, the space before : is required to not make the colon a part of the identifier.
+To define a prefix operator, write: `def unary_- : <type> = {}`, the space before `:` is required to not make the colon a part of the identifier.
 Only 4 operators can be used: `+` `-` `!` `~`
 
-To refer to a method foo from a function foo inside another method, write like this
-{%highlight scala%}
+To refer to a method `foo` from a function `foo` inside another method, write like this
+{{<highlight scala >}}
 trait Bar {
   self =>
 
@@ -32,7 +32,7 @@ trait Bar {
     def foo = self.foo // or like Java: Bar.this.foo
   }
 }
-{%endhighlight%}
+{{</highlight >}}
 
 Only the primary constructor of a class can call the superclass constructor.  
 Every auxiliary constructor must invoke another constructor as its first action.

@@ -8,6 +8,7 @@
   <footer>
   {{ with .NextInSection }}<a class="next" href="{{.Permalink}}">Next >></a>{{end}}
   {{ with .PrevInSection }}<a href="{{.Permalink}}"><< Prev</a>{{end}}
+  {{ partial "comments.html" . }}
   </footer>
 </article>
 {{ end }}

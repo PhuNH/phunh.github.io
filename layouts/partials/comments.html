@@ -1,0 +1,32 @@
+<section class="comments" id="comment-section">
+  <hr>
+  {{ $comments := index site.Data.comments .File.BaseFileName }}
+  {{ if $comments }}
+  {{ $f := slice }}
+  {{ range $comments }}
+    {{ if eq .reply_to "" }}
+    {{ $f = $f | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $first_level := sort $f "date" }}
+  {{ $comment_count := len $comments }}
+  <!-- Existing comments -->
+  <div class="comments__existing">
+    <h2>{{ if eq $comment_count 1 }}One comment{{ else }}{{ $comment_count }} comments{{ end }}</h2>
+    {{ range $first_level }}
+      {{ partial "comment.html" (dict "comments" $comments "comment" .) }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <!-- New comment form -->
+  {{ if ne .Params.commenting "false" }}
+  <div id="respond" class="comment__new">
+    {{ partial "comment_form.html" . }}
+  </div>
+  {{ end }}
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+{{- $js := resources.Get "js/jquery-comment.js" }}
+<script src="{{ $js.RelPermalink }}"></script>

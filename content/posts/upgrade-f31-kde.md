@@ -18,7 +18,7 @@ Here come the issues, from while upgrading until using:
 
 #### ~~Creating boot menu and booting up~~
 
-__Details__: [problem with grubby]({% post_url 2020-04-07-problem-grubby-f31 %})
+__Details__: [problem with grubby]({{<relref "problem-grubby-f31" >}})
 
 ```
 11:26:27 dnf[781]:   Running scriptlet: kernel-core-5.5.10-200.fc31.x86_64               5138/5138
@@ -45,11 +45,13 @@ Only Firefox and Thunderbird are restored; for others, sometimes some are, somet
 ---
 #### Logoff
 
-`kscreen.kded: PowerDevil SuspendSession action not available!`
+```
+kscreen.kded: PowerDevil SuspendSession action not available!
+```
 
 ---
 #### krunner
-  - ~~To toggle krunner with Meta key, `invokeShortcut,run command` can't be used anymore~~ [workaround]({% post_url 2020-03-25-toggle-krunner-plasma-5.17 %})
+  - ~~To toggle krunner with Meta key, `invokeShortcut,run command` can't be used anymore~~ [workaround]({{<relref "toggle-krunner-plasma-5.17.md" >}})
   - ~~Programs opened have a different interface and a different icon in Task Switcher from those of ones opened from Application Menu~~  
   It turns out to be Fusion style (_System Settings_ > _Application Style_ > _Application Style_). Reason unknown. Being asked [here](https://www.reddit.com/r/kde/comments/g3jwyy/some_apps_are_in_fusion_style_while_the_style_in/).  
   __Workaround__: create a symlink to `/usr/share/kglobalaccel/krunner.desktop` in `/etc/xdg/autostart/`, or just use Alt+Space/Alt+F2 to start KRunner for the first time after system startup. After that using the assigned key combination to execute the script will bring up KRunner with the normal application style.

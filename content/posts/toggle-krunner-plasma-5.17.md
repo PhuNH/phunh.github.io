@@ -10,14 +10,22 @@ title: Toggle KRunner in Plasma 5.17
 
 On my Fedora KDE machine, I use KRunner instead of the Application Menu to launch programs, since it can also do other stuff like executing commands, calculating expressions, etc., which is quite convenient.
 
-Previously on Plasma 5.16, setting Meta key shortcut to `org.kde.kglobalaccel,/component/krunner,,invokeShortcut,run command` in kwinrc is enough to make KRunner toggleable using Meta key. However, this doesn't work anymore in Plasma 5.17. KRunner can now only be opened with Meta key if we set the shortcut to `org.kde.krunner,/App,,display`. Wanna close it? Reach to the Esc key.
+Previously on Plasma 5.16, setting Meta key shortcut to
+```
+org.kde.kglobalaccel,/component/krunner,,invokeShortcut,run
+```
+command in kwinrc is enough to make KRunner toggleable using Meta key. However, this doesn't work anymore in Plasma 5.17. KRunner can now only be opened with Meta key if we set the shortcut to
+```
+org.kde.krunner,/App,,display
+```
+Wanna close it? Reach to the Esc key.
 
 I was stuck with this for some days, until this morning I just looked through my bookmark collection with no real purpose and saw the title "KDE 5.17: KRunner or KRunner\_Desktop ?" of [a Reddit post][reddit-post] 5 months ago. And...
 
 The solution is:
 - Install xdotool
 - Copy the guy's code to make a bash script
-{{< highlight bash >}}
+{{<highlight bash >}}
 #!/bin/bash
 krunnerWindow=$(xdotool getwindowfocus getwindowname)
 if [[ $krunnerWindow == *"krunner"* ]]; then
@@ -27,7 +35,7 @@ else
     qdbus org.kde.krunner /App display
     exit 0
 fi
-{{< / highlight >}}
+{{</highlight >}}
 - Create a custom global shortcut:
   - _System Settings_ > _Shortcuts_ > _Custom Shortcuts_ > _Edit_ > _New_ > _Global Shortcut_ > _Command/URL_
   - Point to the bash script in the new shortcut's _Action_ tab
